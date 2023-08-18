@@ -27,8 +27,8 @@ class Gallery(models.Model):
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
-        return self.image
+        return self.title
 
     def delete(self, *args, **kwargs):
-        self.image_comment.delete()
+        self.image.delete()
         super().delete(*args, **kwargs)
