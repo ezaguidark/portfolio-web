@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, Gallery
+from .models import Project, Gallery, Blog
 
 
 class CommentInline(admin.TabularInline):
@@ -15,3 +15,4 @@ class ProjectAdmin(admin.ModelAdmin):
 
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Gallery)
+admin.site.register(Blog)

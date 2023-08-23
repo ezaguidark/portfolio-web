@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,23 +16,25 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">Poner mi logo aqui</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'images/logo.png' %}" alt="logo" width="50" height="50">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">About Me</a>
+            <a class="nav-link" href="{% url 'home' %}#about">About Me</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'all-projects' %}">Projects</a>
+            <a class="nav-link" href="{% url 'all-projects' %}">All Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact Me</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-          </li>
           <button class="btn btn-outline-light ms-4" id="boostrap_b" onclick="changeStyle()">
             <i class="bi bi-moon"></i> /
             <i class="bi bi-sun"></i>
@@ -45,8 +48,35 @@
         {% block content %}{% endblock content %}
     </main>
 
+    <footer class="footer mt-auto py-3 bg-dark text-light">
+      <div class="container">
+          <div class="d-flex align-items-center">
+            <span class="mb-md-0">&copy; 2023, David Ezagui.</span>
+            <a
+              type="button" class="ms-3 btn btn-outline-light bi-linkedin"  
+              href="https://www.linkedin.com/in/david-ezagui-007917b3/" target="_blank"
+              class="mr-10">
+              <span class="visually-hidden">LinkedIn</span>
+            </a>
+            <a
+              type="button"
+              class="ms-3 btn btn-outline-light bi-github"
+              href="https://github.com/ezaguidark"
+              target="_blank"
+              class="mr-10">
+              <span class="visually-hidden">GitHub</span>
+            </a>
+          
+            <div class="ms-auto">Site built with <a href="https://www.djangoproject.com/" target="_blank">Django</a></div>
+          </div>
+      </div>
+    </footer>
+    
+    
+
     <!-- Boostrap.js bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
     
     <!-- Para cambiar de modo dia y noche con boostrap cnd -->
     <!-- https://www.bootstrapcdn.com/ -->

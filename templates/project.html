@@ -3,4 +3,16 @@
 {% block title %}Project: {{ project.title }}{% endblock title %}
 
 {% block content %}
+<div class="container mt-3 mb-3 shadow">
+    <div class="card">
+      <h1 class="card-header text-center">{{ project.title }}</h1>
+      <img src="{{ project.image.url }}" class="rounded m-4" alt="Imagen del post">
+      <div class="card-body">
+        <p class="ms-3">{{ project.body }}</p>
+      </div>
+    </div>
+  </div>  
+
+  
+
 {% endblock content %}

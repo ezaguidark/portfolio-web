@@ -6,6 +6,9 @@ class Project(models.Model):
     title = models.CharField(max_length=250)
     body = models.TextField()
     image = models.ImageField(null=True, blank=True)
+    link = models.URLField(null=True, blank=True)
+    link2 = models.URLField(null=True, blank=True)
+    urlname = models.CharField(max_length=20)
 
     def __str__(self):
         return self.title
@@ -32,3 +35,16 @@ class Gallery(models.Model):
     def delete(self, *args, **kwargs):
         self.image.delete()
         super().delete(*args, **kwargs)
+
+
+class Blog(models.Model):
+    title = models.CharField(max_length=250)
+    body = models.TextField()
+    image1 = models.ImageField(null=True, blank=True)
+    image2 = models.ImageField(null=True, blank=True)
+    link = models.URLField(null=True, blank=True)
+    link2 = models.URLField(null=True, blank=True)
+    urlname = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.title
