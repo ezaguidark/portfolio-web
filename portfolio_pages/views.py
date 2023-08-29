@@ -1,15 +1,21 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
-from django.views.generic import TemplateView, DetailView, ListView, FormView
+from django.views.generic import TemplateView, DetailView, ListView, FormView, View
 from. models import Project, Blog
 from django.urls import reverse_lazy
 from .forms import ContactForm
 from django.conf import settings
+from django.http import HttpResponse, FileResponse
 
 # Create your views here.
 
 class HomePageView(TemplateView):
     template_name = "home.html"
+    model = Project
+
+class EasterEgg(TemplateView):
+    template_name = "meme.html"
+
 
 class AllProjetsView(ListView):
     model = Project
@@ -51,3 +57,16 @@ class ContactView(FormView):
              fail_silently=False,
         )
         return super().form_valid(form)
+        
+
+def Download_cv(request):
+    # Obtén el archivo PDF
+    pdf_file = open('portfolio_pages\static\cv.pdf', 'rb')
+
+    # Crea la respuesta
+    response = HttpResponse(pdf_file, content_type='application/pdf')
+
+    # Establece el nombre del archivo
+    response['Content-Disposition'] = 'inline; filename="David_Ezagui_CV.pdf"'
+
+    return response

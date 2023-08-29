@@ -4,31 +4,29 @@
 
 {% block content %}
 
+<!-- Recordatorio: Proyecto 5 y 6 sobre los prototipos de Unity y Sobre esta misma pagina -->
+
 <div class="col-md-11 mx-auto">
       <div class="my-2">
         <div class="p-4 text-center">
           <div class="container py-3 ">
             <h1>All Projects</h1>
 
-            <div class="row g-3">
-
+            <div class="row">
               {% for project in  projects %}
-
-              <a href="{% url 'project-detail' project.urlname %}" class="text-decoration-none">
                 <div class="col-md-4 mb-3">
-                  <div class="card btn btn-outline-secondary shadow">
-                    <img src="{{ project.image.url }}" class="card-img-top" alt="project image">
-                    <div class="card-body">
-                      <h5 class="card-title">{{ project.title }}</h5>
-                      <p class="card-text">{{ project.body }}</p>
+                  <a href="{% url 'project-detail' project.urlname %}" class="text-decoration-none">
+                    <div class="card btn btn-outline-secondary shadow">
+                      <img src="{{ project.image.url }}" class="card-img-top" alt="project image">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.body|slice:"80" }}...</p>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
-              </a>
-
-              {% endfor %}   
-
-          </div>
+              {% endfor %}
+            </div>
         </div>
       </div>
     </div>
