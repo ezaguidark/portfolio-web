@@ -22,6 +22,6 @@ from django.conf.urls.static import static
 # Cambiar la url de admin mas adelante.
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('ezaguidark/admin/', admin.site.urls),
     path('', include('portfolio_pages.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
