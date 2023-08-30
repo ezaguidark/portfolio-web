@@ -61,7 +61,7 @@ class ContactView(FormView):
 
 def Download_cv(request):
     # Obtén el archivo PDF
-    # /app/portfolio_pages/static/cv.pdf
+    # Nota: static/cv.pdf en local y /app/static/cv.pdf en render.com segui la ruta que aparecia en el debug.
     pdf_file = open('/app/static/cv.pdf', 'rb')
 
     # Crea la respuesta

@@ -30,7 +30,8 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# Este solo funciona para render.com. para local, dejarlo vacio o poner '*'
+ALLOWED_HOSTS = ['david-ezagui-portfolio-web.onrender.com']
 
 
 # Application definition
@@ -126,6 +127,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+# Nota: esta vez deje el folder static por defecto dentro de la app.
 
 STATIC_URL = 'static/'
 STATIC_ROOT = str(BASE_DIR.joinpath('static'))
