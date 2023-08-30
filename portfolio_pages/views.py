@@ -61,7 +61,7 @@ class ContactView(FormView):
 
 def Download_cv(request):
     # Obtén el archivo PDF
-    pdf_file = open('app\portfolio_pages\static\cv.pdf', 'rb')
+    pdf_file = open('/app/portfolio_pages/static/cv.pdf', 'rb')
 
     # Crea la respuesta
     response = HttpResponse(pdf_file, content_type='application/pdf')
