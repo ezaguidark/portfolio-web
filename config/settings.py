@@ -31,7 +31,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 
 # Este solo funciona para render.com. para local, dejarlo vacio o poner '*'
-ALLOWED_HOSTS = ['david-ezagui-portfolio-web.onrender.com']
+ALLOWED_HOSTS = ['david-ezagui-portfolio-web.onrender.com','127.0.0.1']
 
 
 # Application definition
